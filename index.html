@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EcoVibes - Sustainable travel in India. Eco-friendly destinations, homestays, and green travel tips from the Himalaya to the coast.">
-  <meta name="keywords" content="eco tourism India, sustainable travel India, homestays, Sikkim, Meghalaya, Kerala, Spiti, responsible travel">
+  <meta name="description" content="EcoVibes - Sustainable travel in India. Eco-friendly destinations, seasons, transport, packing lists, green festivals, and travel tips from the Himalaya to the coast.">
+  <meta name="keywords" content="eco tourism India, sustainable travel India, homestays, Sikkim, Meghalaya, Kerala, Spiti, Kaziranga, responsible travel, green festivals">
   <meta name="author" content="devKiNGCRiC">
   <title>EcoVibes | Sustainable Travel in India</title>
 
@@ -31,10 +31,11 @@
 
       <ul class="nav-links">
         <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#seasons">Seasons</a></li>
         <li><a href="#tips">Tips</a></li>
         <li><a href="#journal">Journal</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact" class="nav-cta">Plan a trip</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -47,12 +48,12 @@
         <p class="hero-hindi" lang="hi" aria-hidden="true">प्रकृति</p>
         <h1>Travel India gently</h1>
         <p class="hero-text">
-          Homestays in Spiti, root bridges in Meghalaya, turtle walks on the Odisha coast.
+          Homestays in Spiti, root bridges in Meghalaya, nesting turtles on the Odisha coast.
           Find places where your visit helps the land and the people who live on it.
         </p>
         <div class="hero-buttons">
           <a href="#destinations" class="btn">Find a destination</a>
-          <a href="#contact" class="btn btn-ghost">Plan with us</a>
+          <a href="#seasons" class="btn btn-ghost">When to go</a>
         </div>
       </div>
     </section>
@@ -62,51 +63,159 @@
       <div class="section-head">
         <h2>Where to go</h2>
         <p class="hindi" lang="hi">कहाँ जाएँ</p>
-        <p class="section-intro">Six places in India that are getting green travel right.</p>
+        <p class="section-intro">Twelve places in India that are getting green travel right. Pick a region to narrow the list.</p>
+      </div>
+
+      <!-- Region filter (radio buttons, pure CSS) -->
+      <input type="radio" name="region-filter" id="f-all" class="visually-hidden" checked>
+      <input type="radio" name="region-filter" id="f-himalaya" class="visually-hidden">
+      <input type="radio" name="region-filter" id="f-northeast" class="visually-hidden">
+      <input type="radio" name="region-filter" id="f-south" class="visually-hidden">
+      <input type="radio" name="region-filter" id="f-coast" class="visually-hidden">
+
+      <div class="filters">
+        <label for="f-all">All regions</label>
+        <label for="f-himalaya">The Himalaya</label>
+        <label for="f-northeast">North-East</label>
+        <label for="f-south">South India</label>
+        <label for="f-coast">East coast &amp; islands</label>
       </div>
 
       <div class="places">
-        <article class="place">
+        <article class="place himalaya">
           <p class="place-state">Sikkim</p>
           <h3>Khangchendzonga</h3>
           <p>India's first fully organic state. The national park around the world's third-highest peak is a UNESCO World Heritage Site.</p>
           <p class="season">Best time: Mar–May, Oct–Dec</p>
         </article>
 
-        <article class="place">
-          <p class="place-state">Meghalaya</p>
-          <h3>Mawlynnong</h3>
-          <p>A Khasi village often called the cleanest in Asia, close to living root bridges grown by hand over generations.</p>
-          <p class="season">Best time: Oct–Apr</p>
-        </article>
-
-        <article class="place">
-          <p class="place-state">Kerala</p>
-          <h3>Kumarakom backwaters</h3>
-          <p>Where Kerala's Responsible Tourism Mission began. Village tours and homestays are run by local families.</p>
-          <p class="season">Best time: Sep–Mar</p>
-        </article>
-
-        <article class="place">
+        <article class="place himalaya">
           <p class="place-state">Himachal Pradesh</p>
           <h3>Spiti Valley</h3>
           <p>A high cold desert of monasteries and mud-brick homes. Stay with families and travel with community-run groups.</p>
           <p class="season">Best time: Jun–Sep</p>
         </article>
 
-        <article class="place">
+        <article class="place himalaya">
+          <p class="place-state">Uttarakhand</p>
+          <h3>Valley of Flowers</h3>
+          <p>An alpine meadow that blooms after the monsoon rains, part of a UNESCO World Heritage Site with Nanda Devi National Park.</p>
+          <p class="season">Best time: Jul–Aug (open Jun–Oct)</p>
+        </article>
+
+        <article class="place northeast">
+          <p class="place-state">Meghalaya</p>
+          <h3>Mawlynnong</h3>
+          <p>A Khasi village often called the cleanest in Asia, close to living root bridges grown by hand over generations.</p>
+          <p class="season">Best time: Oct–Apr</p>
+        </article>
+
+        <article class="place northeast">
+          <p class="place-state">Assam</p>
+          <h3>Kaziranga</h3>
+          <p>A UNESCO-listed national park that is home to about two-thirds of the world's greater one-horned rhinos.</p>
+          <p class="season">Best time: Nov–Apr (closed in the monsoon)</p>
+        </article>
+
+        <article class="place northeast">
+          <p class="place-state">Nagaland</p>
+          <h3>Khonoma</h3>
+          <p>Known as India's first green village. The Angami community here stopped hunting in 1998 and now protects its forests.</p>
+          <p class="season">Best time: Oct–May</p>
+        </article>
+
+        <article class="place northeast">
+          <p class="place-state">Arunachal Pradesh</p>
+          <h3>Ziro Valley</h3>
+          <p>Home of the Apatani people, who farm fish and rice together in the same flooded fields without heavy machinery.</p>
+          <p class="season">Best time: Mar–Oct</p>
+        </article>
+
+        <article class="place south">
+          <p class="place-state">Kerala</p>
+          <h3>Kumarakom backwaters</h3>
+          <p>Where Kerala's responsible tourism programme started. Many village tours and homestays are run by local families.</p>
+          <p class="season">Best time: Sep–Mar</p>
+        </article>
+
+        <article class="place south">
           <p class="place-state">Karnataka</p>
           <h3>Coorg</h3>
           <p>Shade-grown coffee estates in the Western Ghats, where the forest canopy is kept over the coffee plants.</p>
           <p class="season">Best time: Oct–Mar</p>
         </article>
 
-        <article class="place">
+        <article class="place coast">
+          <p class="place-state">West Bengal</p>
+          <h3>Sundarbans</h3>
+          <p>The largest mangrove forest in the world, shared with Bangladesh, and home to the Royal Bengal tiger. Explore by boat.</p>
+          <p class="season">Best time: Sep–Mar</p>
+        </article>
+
+        <article class="place coast">
+          <p class="place-state">Odisha</p>
+          <h3>Chilika Lake</h3>
+          <p>Asia's largest brackish water lagoon. Watch Irrawaddy dolphins and huge flocks of winter migratory birds.</p>
+          <p class="season">Best time: Nov–Feb</p>
+        </article>
+
+        <article class="place coast">
           <p class="place-state">Andaman &amp; Nicobar</p>
           <h3>Swaraj Dweep</h3>
           <p>Coral reefs and quiet beaches. Use reef-safe sunscreen and pick dive centres that never touch the coral.</p>
           <p class="season">Best time: Nov–Apr</p>
         </article>
+      </div>
+    </section>
+
+    <!-- ================= Seasons Section ================= -->
+    <section id="seasons" class="seasons">
+      <div class="section-head">
+        <h2>When to go</h2>
+        <p class="hindi" lang="hi">कब जाएँ</p>
+        <p class="section-intro">
+          India has many climates at once. When it is too hot in the plains, the mountains are at their best,
+          and the monsoon that floods one coast leaves the rain-shadow valleys dry.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="season-table">
+          <thead>
+            <tr>
+              <th scope="col">Season</th>
+              <th scope="col">Months</th>
+              <th scope="col">Good places to go</th>
+              <th scope="col">Keep in mind</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Winter</th>
+              <td>Dec–Feb</td>
+              <td>Kerala, Coorg, Andamans, Kaziranga, Sundarbans, Chilika Lake</td>
+              <td>High Himalayan passes are closed by snow. Winter fog can delay trains in North India.</td>
+            </tr>
+            <tr>
+              <th scope="row">Summer</th>
+              <td>Mar–May</td>
+              <td>Sikkim (rhododendrons in bloom), lower Himachal valleys, Meghalaya, Ziro Valley</td>
+              <td>The plains get very hot. Book hill stays early, as these are peak months.</td>
+            </tr>
+            <tr>
+              <th scope="row">Monsoon</th>
+              <td>Jun–Sep</td>
+              <td>Spiti and Ladakh (rain-shadow areas), Valley of Flowers, Western Ghats</td>
+              <td>Landslides close hill roads. Many national parks and tiger reserves close.</td>
+            </tr>
+            <tr>
+              <th scope="row">Post-monsoon</th>
+              <td>Oct–Nov</td>
+              <td>Sikkim, Uttarakhand treks, Khonoma, Coorg, Meghalaya</td>
+              <td>Clear mountain views and green hills. Festival season, so trains fill up fast.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -121,7 +230,7 @@
       <ul class="tips-list">
         <li>
           <h3>Take the train</h3>
-          <p>Indian Railways reaches almost everywhere and emits far less per person than a flight. Book early on IRCTC.</p>
+          <p>Indian Railways reaches most of the country and usually emits far less per person than a flight. Book early on IRCTC.</p>
         </li>
         <li>
           <h3>Carry a steel bottle</h3>
@@ -129,7 +238,7 @@
         </li>
         <li>
           <h3>Say no to plastic bags</h3>
-          <p>Sikkim and Himachal have strict rules on single-use plastic. Keep a cloth jhola in your bag everywhere.</p>
+          <p>Sikkim and Himachal Pradesh have strict rules on single-use plastic. Keep a cloth jhola in your bag.</p>
         </li>
         <li>
           <h3>Eat the local thali</h3>
@@ -137,13 +246,114 @@
         </li>
         <li>
           <h3>Stay in homestays</h3>
-          <p>Your rupees go straight to the family hosting you, and you learn the place from people who live there.</p>
+          <p>Your money goes straight to the family hosting you, and you learn the place from people who live there.</p>
         </li>
         <li>
           <h3>Respect sacred places</h3>
           <p>Remove your shoes, dress modestly, and ask before you photograph people or rituals.</p>
         </li>
+        <li>
+          <h3>Hire local guides</h3>
+          <p>A guide from the village knows the trail, the weather, and the stories, and the fee stays in the community.</p>
+        </li>
+        <li>
+          <h3>Keep wildlife wild</h3>
+          <p>Never feed monkeys or other animals, keep your voice low on safari, and skip any ride or show using animals.</p>
+        </li>
+        <li>
+          <h3>Save water</h3>
+          <p>Many hill towns and islands run short of water. Take bucket baths and reuse towels.</p>
+        </li>
       </ul>
+    </section>
+
+    <!-- ================= Getting Around + Packing ================= -->
+    <section id="travel" class="travel">
+      <div class="travel-grid">
+        <div class="getting-around">
+          <h2>Getting around</h2>
+          <p class="hindi" lang="hi">आना-जाना</p>
+
+          <dl class="transport">
+            <dt>Trains</dt>
+            <dd>
+              Sleeper class (SL) is the cheapest with open windows and no AC. 3AC and 2AC have air-conditioning and
+              bedding. Chair Car (CC) is for day journeys. Book on IRCTC; the Tatkal quota opens one day before the journey.
+            </dd>
+
+            <dt>State buses</dt>
+            <dd>
+              Government buses reach places trains cannot. HRTC buses run deep into Himachal, including Spiti,
+              and KSRTC buses connect towns across Kerala and Karnataka.
+            </dd>
+
+            <dt>Shared jeeps</dt>
+            <dd>
+              In the North-East and the hills, shared jeeps and Sumos leave from town stands when full. They are
+              cheap and fill every seat, so fewer vehicles are on the road.
+            </dd>
+
+            <dt>Metros and e-rickshaws</dt>
+            <dd>
+              Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, and other cities have metro lines. For short
+              rides, electric rickshaws are quiet and cause no exhaust fumes.
+            </dd>
+          </dl>
+        </div>
+
+        <div class="packing">
+          <h2>Packing list</h2>
+          <p class="hindi" lang="hi">सामान की सूची</p>
+          <p class="packing-note">Tick off each item as you pack.</p>
+
+          <ul class="checklist">
+            <li><input type="checkbox" id="p1"><label for="p1">Steel water bottle</label></li>
+            <li><input type="checkbox" id="p2"><label for="p2">Cloth jhola for shopping</label></li>
+            <li><input type="checkbox" id="p3"><label for="p3">Steel tiffin box and spoon</label></li>
+            <li><input type="checkbox" id="p4"><label for="p4">Soap and shampoo bars</label></li>
+            <li><input type="checkbox" id="p5"><label for="p5">Reef-safe sunscreen</label></li>
+            <li><input type="checkbox" id="p6"><label for="p6">Mosquito repellent</label></li>
+            <li><input type="checkbox" id="p7"><label for="p7">Headlamp for power cuts</label></li>
+            <li><input type="checkbox" id="p8"><label for="p8">Light shawl or scarf for temples</label></li>
+            <li><input type="checkbox" id="p9"><label for="p9">Rain jacket in the monsoon</label></li>
+            <li><input type="checkbox" id="p10"><label for="p10">Quick-dry towel</label></li>
+            <li><input type="checkbox" id="p11"><label for="p11">Power bank</label></li>
+            <li><input type="checkbox" id="p12"><label for="p12">Copies of ID and any permits</label></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Festivals Section ================= -->
+    <section id="festivals" class="festivals">
+      <div class="section-head">
+        <h2>Green festivals</h2>
+        <p class="hindi" lang="hi">हरित त्योहार</p>
+        <p class="section-intro">India celebrates all year. Here is how to join in without leaving a mess behind.</p>
+      </div>
+
+      <div class="festival-list">
+        <article class="festival">
+          <h3>Diwali</h3>
+          <p class="festival-when">October or November</p>
+          <p>Light clay diyas and skip the firecrackers. Air quality in many North Indian cities is already poor at this time of year.</p>
+        </article>
+        <article class="festival">
+          <h3>Holi</h3>
+          <p class="festival-when">March</p>
+          <p>Play with natural colours made from turmeric, flowers, and beetroot, and go easy on the water.</p>
+        </article>
+        <article class="festival">
+          <h3>Ganesh Chaturthi</h3>
+          <p class="festival-when">August or September</p>
+          <p>Choose idols made of natural clay, and immerse them in the artificial tanks many cities set up to protect lakes and the sea.</p>
+        </article>
+        <article class="festival">
+          <h3>Hornbill Festival</h3>
+          <p class="festival-when">1–10 December, Nagaland</p>
+          <p>A celebration of Naga tribes at Kisama Heritage Village. Carry your waste back and buy crafts straight from the makers.</p>
+        </article>
+      </div>
     </section>
 
     <!-- ================= Journal Section ================= -->
@@ -186,40 +396,189 @@
           <details>
             <summary>Read the story</summary>
             <p>
-              At Rushikulya and Gahirmatha in Odisha, thousands of turtles nest together between February
-              and March. In Chennai, volunteer groups run night turtle walks along the beach from January
-              to March to move eggs to safe hatcheries. Go with these groups, use no torches or flash
+              At Rushikulya and Gahirmatha in Odisha, thousands of turtles can nest together, usually between February
+              and April. In Chennai, volunteer groups run night turtle walks during the nesting season to
+              move eggs to safe hatcheries. Go with these groups, use no torches or flash
               near the turtles, and never touch the hatchlings as they head to the sea.
             </p>
           </details>
         </div>
       </article>
+
+      <div class="short-stories">
+        <article class="short-story">
+          <p class="place-state">Meghalaya</p>
+          <h3>Bridges that grow</h3>
+          <p>
+            In the wet hills of Meghalaya, Khasi villagers guide the roots of rubber fig trees across streams
+            until they become bridges strong enough to walk on.
+          </p>
+          <details>
+            <summary>Read the story</summary>
+            <p>
+              A root bridge takes many years to grow and gets stronger with age. The best known is the
+              double-decker bridge near Nongriat, reached by a long walk down thousands of stone steps.
+              Stay overnight in the village instead of rushing back, stick to the paths, and never carve
+              names into the roots.
+            </p>
+          </details>
+        </article>
+
+        <article class="short-story">
+          <p class="place-state">Anywhere in India</p>
+          <h3>How to be a good homestay guest</h3>
+          <p>
+            A homestay is someone's home, not a hotel. A few simple manners make the stay better for
+            you and your hosts.
+          </p>
+          <details>
+            <summary>Read the story</summary>
+            <ul>
+              <li>Take off your shoes at the door, and ask before going into the kitchen or prayer room.</li>
+              <li>Eat what is cooked for the family, and say if there is something you can't eat.</li>
+              <li>Switch off lights and geysers; many villages have limited power.</li>
+              <li>Pay the agreed price without bargaining hard. It is often the family's main income.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="short-story">
+          <p class="place-state">Railway platforms</p>
+          <h3>Chai in a kulhad</h3>
+          <p>
+            Before plastic cups, tea in India was served in kulhads, small unglazed cups of fired
+            clay. They are coming back.
+          </p>
+          <details>
+            <summary>Read the story</summary>
+            <p>
+              A kulhad is made from local clay by potters, used once, and goes back to the earth.
+              The clay also gives the chai an earthy smell many people love. When you see a stall serving
+              kulhad chai, choose it over a plastic or paper cup.
+            </p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= Words Section ================= -->
+    <section id="words" class="words">
+      <div class="section-head">
+        <h2>Words for the road</h2>
+        <p class="hindi" lang="hi">काम के शब्द</p>
+        <p class="section-intro">
+          India has 22 official languages, and Hindi isn't spoken everywhere. A few local words go a long way.
+        </p>
+      </div>
+
+      <div class="words-grid">
+        <dl class="word-list">
+          <div><dt>Namaste</dt><dd>Hello, with palms pressed together</dd></div>
+          <div><dt>Dhanyavaad</dt><dd>Thank you (Hindi)</dd></div>
+          <div><dt>Paani</dt><dd>Water</dd></div>
+          <div><dt>Jhola</dt><dd>Cloth shoulder bag</dd></div>
+          <div><dt>Kulhad</dt><dd>Clay cup for chai</dd></div>
+          <div><dt>Pattal</dt><dd>Plate made of stitched leaves</dd></div>
+          <div><dt>Thali</dt><dd>A full meal served on one plate</dd></div>
+          <div><dt>Dhaba</dt><dd>Roadside eatery</dd></div>
+        </dl>
+
+        <div class="greetings">
+          <h3>Say hello in the local language</h3>
+          <ul>
+            <li><strong>Vanakkam</strong> – hello in Tamil Nadu</li>
+            <li><strong>Namaskara</strong> – hello in Karnataka</li>
+            <li><strong>Nomoshkar</strong> – hello in West Bengal</li>
+            <li><strong>Julley</strong> – hello and thank you in Ladakh</li>
+            <li><strong>Tashi delek</strong> – a greeting in Sikkim</li>
+            <li><strong>Khublei</strong> – thank you in Khasi, Meghalaya</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ Section ================= -->
+    <section id="faq" class="faq">
+      <div class="section-head">
+        <h2>Questions travellers ask</h2>
+        <p class="hindi" lang="hi">सवाल-जवाब</p>
+      </div>
+
+      <div class="faq-list">
+        <details>
+          <summary>Is eco-friendly travel in India more expensive?</summary>
+          <p>
+            Usually not. Trains, state buses, homestays, and local food often cost less than flights, big hotels,
+            and restaurant chains. Some specialist eco-lodges cost more, but they are not the only option.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I drink tap water?</summary>
+          <p>
+            It's best not to. Drink filtered or boiled water and refill your own bottle at homestays, cafés,
+            and station water machines instead of buying plastic bottles.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need a permit for some places?</summary>
+          <p>
+            Yes. Indian travellers need an Inner Line Permit (ILP) for Arunachal Pradesh, Nagaland, Mizoram, and
+            Manipur. Foreign travellers need a Protected Area Permit for some areas, including parts of Sikkim.
+            Check the official state government website before you go, as rules change.
+          </p>
+        </details>
+
+        <details>
+          <summary>Are national parks open all year?</summary>
+          <p>
+            No. Many national parks and tiger reserves close during the monsoon, roughly from July to September,
+            and some zones stay closed for longer. Always check the park's official website for dates.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do I know if a stay is really eco-friendly?</summary>
+          <p>
+            Ask simple questions: Who owns it? Do they hire people from the area? How do they handle waste and
+            water? Do they use solar power? A genuine eco-stay will be happy to answer.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is it safe to travel in the monsoon?</summary>
+          <p>
+            It can be, if you choose well. Rain-shadow areas like Spiti and Ladakh stay dry, but hill roads in many
+            other places see landslides. Check the weather forecast and road updates, and keep spare days in your plan.
+          </p>
+        </details>
+      </div>
     </section>
 
     <!-- ================= About Section ================= -->
     <section id="about" class="about">
       <p class="about-hindi" lang="hi">अतिथि देवो भव</p>
-      <p class="about-translation">“The guest is god.” We think a good guest gives something back.</p>
+      <p class="about-translation">“The guest is god.” A good guest gives something back.</p>
       <p class="about-text">
-        EcoVibes is a small team of Indian travellers. We share places, stays, and habits that protect
-        India's forests, rivers, and coasts, and support the communities who look after them.
+        EcoVibes is a personal project by devKiNGCRiC about travelling India responsibly: places, stays,
+        and habits that protect India's forests, rivers, and coasts, and support the communities who look after them.
       </p>
     </section>
 
     <!-- ================= Contact Section ================= -->
     <section id="contact" class="contact">
       <div class="contact-info">
-        <h2>Plan a trip with us</h2>
+        <h2>Get in touch</h2>
         <p class="hindi" lang="hi">संपर्क करें</p>
         <p>
-          Tell us where you'd like to go and when. We'll reply with homestays, trains, and local guides
-          that fit your trip.
+          Have a question, a correction, or a green travel story from India? Send a message and it will
+          open in your email app.
         </p>
-        <p class="contact-detail">Based in Dehradun, Uttarakhand</p>
-        <p class="contact-detail"><a href="mailto:hello@ecovibes.in">hello@ecovibes.in</a></p>
+        <p class="contact-detail"><a href="mailto:devkingcric@gmail.com">devkingcric@gmail.com</a></p>
       </div>
 
-      <form class="contact-form" action="mailto:hello@ecovibes.in" method="post" enctype="text/plain">
+      <form class="contact-form" action="mailto:devkingcric@gmail.com" method="post" enctype="text/plain">
         <div class="form-row">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -229,18 +588,18 @@
           <input type="email" id="email" name="email" placeholder="you@example.com" required>
         </div>
         <div class="form-row">
-          <label for="region">Where in India?</label>
+          <label for="region">Region you are asking about</label>
           <select id="region" name="region">
             <option>The Himalaya</option>
             <option>North-East India</option>
             <option>Kerala &amp; the Western Ghats</option>
             <option>The coast &amp; islands</option>
-            <option>Not sure yet</option>
+            <option>General question</option>
           </select>
         </div>
         <div class="form-row">
-          <label for="message">Your trip</label>
-          <textarea id="message" name="message" rows="4" placeholder="Dates, number of travellers, what you'd like to see..." required></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
         </div>
         <button type="submit" class="btn">Send message</button>
       </form>
@@ -258,16 +617,25 @@
         <h3>Explore</h3>
         <ul>
           <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#tips">Tips</a></li>
+          <li><a href="#seasons">When to go</a></li>
+          <li><a href="#travel">Getting around</a></li>
+          <li><a href="#festivals">Green festivals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Read</h3>
+        <ul>
+          <li><a href="#tips">Travel tips</a></li>
           <li><a href="#journal">Journal</a></li>
-          <li><a href="#contact">Plan a trip</a></li>
+          <li><a href="#words">Words for the road</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
         <h3>Follow us</h3>
         <ul>
           <li><a href="https://github.com/devKiNGCRiC" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://twitter.com/KiNGCRiC28" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="https://x.com/KiNGCRiC28" target="_blank" rel="noopener">X (Twitter)</a></li>
           <li><a href="https://instagram.com/kingcric_28" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>

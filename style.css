@@ -278,6 +278,62 @@ footer::before {
   margin: 0 auto;
 }
 
+/* Region filter: hidden radios drive which places are shown */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  max-width: var(--max-width);
+  margin: 0 auto 2.5rem;
+}
+
+.filters label {
+  padding: 0.4rem 1.1rem;
+  border: 2px solid var(--peacock);
+  border-radius: 999px;
+  color: var(--peacock);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filters label:hover {
+  background: rgba(11, 79, 85, 0.08);
+}
+
+#f-all:checked ~ .filters label[for="f-all"],
+#f-himalaya:checked ~ .filters label[for="f-himalaya"],
+#f-northeast:checked ~ .filters label[for="f-northeast"],
+#f-south:checked ~ .filters label[for="f-south"],
+#f-coast:checked ~ .filters label[for="f-coast"] {
+  background: var(--peacock);
+  color: var(--white);
+}
+
+#f-all:focus-visible ~ .filters label[for="f-all"],
+#f-himalaya:focus-visible ~ .filters label[for="f-himalaya"],
+#f-northeast:focus-visible ~ .filters label[for="f-northeast"],
+#f-south:focus-visible ~ .filters label[for="f-south"],
+#f-coast:focus-visible ~ .filters label[for="f-coast"] {
+  outline: 3px solid var(--marigold);
+  outline-offset: 2px;
+}
+
+#f-himalaya:checked ~ .places .place:not(.himalaya),
+#f-northeast:checked ~ .places .place:not(.northeast),
+#f-south:checked ~ .places .place:not(.south),
+#f-coast:checked ~ .places .place:not(.coast) {
+  display: none;
+}
+
 .place {
   border-top: 4px solid var(--marigold);
   padding-top: 1rem;
@@ -371,10 +427,6 @@ footer::before {
   margin: 0 auto 4rem;
 }
 
-.story:last-child {
-  margin-bottom: 0;
-}
-
 .story img {
   width: 100%;
   height: 420px;
@@ -433,6 +485,260 @@ details ul {
 
 details li {
   margin-bottom: 0.4rem;
+}
+
+/* Shorter text-only stories under the photo stories */
+.short-stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.short-story {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 5px solid var(--marigold);
+}
+
+.short-story h3 {
+  font-size: 1.5rem;
+  color: var(--peacock);
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* ===== Seasons ===== */
+.seasons {
+  padding: 5rem 2rem;
+  background: var(--white);
+}
+
+.table-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow-x: auto; /* table scrolls sideways on small phones */
+}
+
+.season-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.season-table th,
+.season-table td {
+  padding: 1rem;
+  vertical-align: top;
+  border-bottom: 1px solid #dfe6e3;
+}
+
+.season-table thead th {
+  background: var(--peacock);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.season-table tbody th {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--rani);
+  white-space: nowrap;
+}
+
+.season-table tbody td:nth-child(2) {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.season-table tbody tr:nth-child(even) {
+  background: var(--paper);
+}
+
+/* ===== Getting around + Packing ===== */
+.travel {
+  padding: 5rem 2rem;
+}
+
+.travel-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.transport dt {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--peacock);
+  margin-top: 1.25rem;
+}
+
+.transport dd {
+  max-width: 60ch;
+}
+
+.packing {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  border-top: 6px solid var(--marigold);
+  align-self: start;
+}
+
+.packing-note {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.checklist {
+  list-style: none;
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed #dfe6e3;
+}
+
+.checklist input {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--leaf);
+  cursor: pointer;
+}
+
+.checklist label {
+  cursor: pointer;
+}
+
+.checklist input:checked + label {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+/* ===== Festivals ===== */
+.festivals {
+  padding: 5rem 2rem;
+  background: #fbeef3; /* pale rani pink */
+}
+
+.festival-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.festival {
+  border-top: 4px solid var(--rani);
+  padding-top: 1rem;
+}
+
+.festival h3 {
+  font-size: 1.6rem;
+  color: var(--rani);
+}
+
+.festival-when {
+  font-weight: 700;
+  color: var(--peacock);
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Words for the road ===== */
+.words {
+  padding: 5rem 2rem;
+  background: var(--peacock-ink);
+  color: #dbe8e6;
+}
+
+.words h2,
+.words .greetings h3 {
+  color: var(--white);
+}
+
+.words .hindi {
+  color: var(--marigold);
+}
+
+.words .section-intro {
+  color: #cfe1de;
+}
+
+.words-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.word-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+}
+
+.word-list dt {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--marigold);
+}
+
+.greetings h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.greetings ul {
+  list-style: none;
+}
+
+.greetings li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.greetings strong {
+  color: var(--white);
+}
+
+/* ===== FAQ ===== */
+.faq {
+  padding: 5rem 2rem;
+}
+
+.faq-list {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.faq-list details {
+  max-width: 800px; /* keep answers readable, aligned with the heading */
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.1rem 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.faq-list summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--peacock);
+  font-size: 1.15rem;
+}
+
+.faq-list details p {
+  max-width: none;
 }
 
 /* ===== About ===== */
@@ -537,7 +843,7 @@ footer::before {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 2rem;
   max-width: calc(var(--max-width) + 4rem);
   margin: 0 auto 2.5rem;
@@ -630,8 +936,13 @@ footer a:hover {
   }
 
   .destinations,
+  .seasons,
   .tips,
+  .travel,
+  .festivals,
   .journal,
+  .words,
+  .faq,
   .about,
   .contact {
     padding-left: 1rem;
@@ -656,9 +967,41 @@ footer a:hover {
     order: 0;
   }
 
-  .contact {
+  .contact,
+  .travel-grid,
+  .words-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .packing {
+    padding: 1.5rem;
+  }
+
+  /* Seasons table: stack each row as a block on phones */
+  .season-table {
+    min-width: 0;
+  }
+
+  .season-table thead {
+    display: none;
+  }
+
+  .season-table tr,
+  .season-table th,
+  .season-table td {
+    display: block;
+  }
+
+  .season-table tbody tr {
+    padding: 1rem 0;
+    border-bottom: 1px solid #dfe6e3;
+  }
+
+  .season-table th,
+  .season-table td {
+    padding: 0.2rem 1rem;
+    border: none;
   }
 
   .contact-form {
