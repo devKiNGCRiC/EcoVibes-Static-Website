@@ -334,9 +334,51 @@ footer::before {
   display: none;
 }
 
+/* Destination cards, colour-coded by region */
+.himalaya { --region: #3b5b92; }   /* glacier indigo */
+.northeast { --region: var(--leaf); }
+.south { --region: var(--peacock); }
+.coast { --region: var(--rani); }
+
 .place {
-  border-top: 4px solid var(--marigold);
-  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(6, 54, 58, 0.06), 0 14px 28px -16px rgba(6, 54, 58, 0.35);
+  transition: transform 0.25s ease;
+}
+
+.place:hover {
+  transform: translateY(-4px);
+}
+
+/* Coloured header with a block-print strip and the state name in Devanagari */
+.place-top {
+  display: flex;
+  align-items: center;
+  height: 96px;
+  padding: 0 1.25rem 18px;
+  background:
+    url("assets/block-print.svg") repeat-x left bottom / auto 20px,
+    var(--region);
+  overflow: hidden;
+}
+
+.place-hindi {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  line-height: 1;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.place-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem 1.25rem 1.5rem;
 }
 
 .place-state {
@@ -352,9 +394,18 @@ footer::before {
 }
 
 .season {
-  margin-top: 0.75rem;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  background: #e7f1e5;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--leaf);
+}
+
+.place-body > p:nth-last-child(2) {
+  margin-bottom: 1rem; /* space above the season pill */
 }
 
 /* ===== Tips ===== */
@@ -385,22 +436,17 @@ footer::before {
   margin: 0 auto;
 }
 
-.tips-list li {
-  position: relative;
-  padding-left: 2rem;
-}
-
-/* Small marigold flower as the bullet */
-.tips-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.35rem;
-  width: 1.1rem;
-  height: 1.1rem;
+/* Round icon badge with a marigold ring */
+.tip-icon {
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-bottom: 0.75rem;
   border-radius: 50%;
-  background: radial-gradient(circle, #c25e00 25%, var(--marigold) 30%);
-  box-shadow: 0 0 0 3px rgba(244, 163, 0, 0.3);
+  border: 2px solid var(--marigold);
+  background: rgba(244, 163, 0, 0.14);
+  font-size: 1.5rem;
 }
 
 .tips-list h3 {
@@ -432,10 +478,12 @@ footer::before {
   height: 420px;
   object-fit: cover;
   border-radius: 200px 200px 12px 12px; /* temple-arch frame */
+  box-shadow: 16px 16px 0 var(--marigold); /* offset arch behind the photo */
 }
 
 .story-reverse img {
   order: 2;
+  box-shadow: -16px 16px 0 var(--rani);
   object-position: center 80%; /* show the waves, not just sky */
 }
 
@@ -637,14 +685,32 @@ details li {
   margin: 0 auto;
 }
 
+.fest-diwali { --fest: var(--marigold); }
+.fest-holi { --fest: var(--rani); }
+.fest-ganesh { --fest: #e8590c; }
+.fest-hornbill { --fest: var(--peacock); }
+
 .festival {
-  border-top: 4px solid var(--rani);
-  padding-top: 1rem;
+  background: var(--white);
+  border-radius: 16px;
+  border-top: 6px solid var(--fest);
+  padding: 1.5rem;
+}
+
+.festival-icon {
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-bottom: 0.75rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--fest) 16%, white);
+  font-size: 1.6rem;
 }
 
 .festival h3 {
   font-size: 1.6rem;
-  color: var(--rani);
+  color: var(--peacock-ink);
 }
 
 .festival-when {
@@ -691,6 +757,14 @@ details li {
   font-family: var(--font-display);
   font-size: 1.5rem;
   color: var(--marigold);
+}
+
+.word-hindi {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #9fc9c2;
+  margin-left: 0.35rem;
 }
 
 .greetings h3 {
@@ -743,10 +817,15 @@ details li {
 
 /* ===== About ===== */
 .about {
-  padding: 5rem 2rem;
+  position: relative;
+  padding: 6rem 2rem;
   background: var(--marigold);
   color: var(--peacock-ink);
   text-align: center;
+}
+
+.about > p {
+  position: relative; /* keep text above the mandala */
 }
 
 .about-hindi {
@@ -790,7 +869,13 @@ details li {
 }
 
 .connect-icon {
-  font-size: 2rem;
+  display: grid;
+  place-items: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  background: #fbeef3;
+  font-size: 1.6rem;
 }
 
 .connect-card h3 {
@@ -885,14 +970,86 @@ footer a:hover {
   font-size: 0.95rem;
 }
 
+/* ===== Mandala (SVG used as a mask so it can take any colour) ===== */
+.mandala {
+  position: absolute;
+  aspect-ratio: 1;
+  pointer-events: none;
+  -webkit-mask: url("assets/mandala.svg") center / contain no-repeat;
+  mask: url("assets/mandala.svg") center / contain no-repeat;
+  animation: mandala-spin 140s linear infinite;
+}
+
+@keyframes mandala-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-mandala {
+  width: min(62vw, 760px);
+  right: -14%;
+  top: 50%;
+  translate: 0 -50%;
+  background: var(--marigold);
+  opacity: 0.22;
+}
+
+.about-mandala {
+  width: min(90vw, 460px);
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  background: var(--peacock-ink);
+  opacity: 0.1;
+}
+
+/* ===== Arched (scalloped) edges on the coloured bands ===== */
+.tips,
+.words {
+  position: relative;
+}
+
+.tips { --arch: var(--peacock); }
+.words { --arch: var(--peacock-ink); }
+
+.tips::before,
+.words::before,
+.tips::after,
+.words::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 18px;
+  pointer-events: none;
+}
+
+.tips::before,
+.words::before {
+  bottom: 100%;
+  background: radial-gradient(circle at 50% 100%, var(--arch) 17px, transparent 18px) 0 0 / 36px 18px repeat-x;
+}
+
+.tips::after,
+.words::after {
+  top: 100%;
+  background: radial-gradient(circle at 50% 0, var(--arch) 17px, transparent 18px) 0 0 / 36px 18px repeat-x;
+}
+
 /* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  .toran {
+  .toran,
+  .mandala {
     animation: none;
+  }
+
+  .place:hover {
+    transform: none;
   }
 }
 
@@ -962,6 +1119,11 @@ footer a:hover {
 
   .story-reverse img {
     order: 0;
+  }
+
+  .story img,
+  .story-reverse img {
+    box-shadow: 10px 10px 0 var(--marigold);
   }
 
   .travel-grid,
