@@ -32,7 +32,10 @@ body {
   font-size: 1.1rem;
   line-height: 1.65;
   color: var(--text);
-  background: var(--paper);
+  /* faint paper grain so light sections feel printed, not flat */
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.02 0 0 0 0 0.2 0 0 0 0 0.22 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    var(--paper);
 }
 
 img {
@@ -75,6 +78,17 @@ h2 {
 .section-head {
   max-width: var(--max-width);
   margin: 0 auto 2.5rem;
+}
+
+.section-head::before {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 0.75rem;
+  background: var(--marigold);
+  -webkit-mask: url("assets/mandala.svg") center / contain no-repeat;
+  mask: url("assets/mandala.svg") center / contain no-repeat;
 }
 
 .section-intro {
@@ -152,15 +166,23 @@ h2 {
 /* ===== Hero Section ===== */
 .hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 88vh;
-  padding: 7rem 2rem 4rem;
+  padding: 7.5rem 2rem 5rem;
   color: var(--white);
   background:
-    linear-gradient(100deg, rgba(6, 54, 58, 0.92) 0%, rgba(6, 54, 58, 0.6) 45%, rgba(6, 54, 58, 0.05) 80%),
-    url("assets/images/hero.jpg") no-repeat center 65%/cover;
+    radial-gradient(circle at 85% 20%, rgba(244, 163, 0, 0.18), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(194, 24, 91, 0.22), transparent 40%),
+    var(--peacock-ink);
   overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 /* Marigold garland hanging across the top of the hero */
@@ -173,6 +195,7 @@ h2 {
   background: url("assets/toran.svg") repeat-x top left;
   transform-origin: top;
   animation: toran-drop 1.2s ease-out both;
+  z-index: 1;
 }
 
 @keyframes toran-drop {
@@ -186,23 +209,93 @@ h2 {
 
 .hero-content {
   position: relative;
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
 }
 
-/* Large Devanagari word behind the headline */
+/* Collage: three photos in temple-arch frames */
+.hero-collage {
+  position: relative;
+  height: 560px;
+}
+
+.hero-collage img {
+  position: absolute;
+  object-fit: cover;
+  border: 6px solid var(--peacock-ink);
+  box-shadow: 0 24px 40px -20px rgba(0, 0, 0, 0.6);
+}
+
+.collage-main {
+  right: 0;
+  top: 0;
+  width: 62%;
+  height: 92%;
+  border-radius: 999px 999px 18px 18px;
+  outline: 2px solid var(--marigold);
+  outline-offset: 8px;
+}
+
+.collage-forest {
+  left: 0;
+  top: 6%;
+  width: 40%;
+  height: 46%;
+  border-radius: 999px 999px 14px 14px;
+}
+
+.collage-sea {
+  left: 8%;
+  bottom: 0;
+  width: 44%;
+  height: 38%;
+  border-radius: 14px 14px 999px 999px; /* inverted arch */
+  object-position: center 85%;
+}
+
+/* Round rotating stamp */
+.stamp {
+  position: absolute;
+  right: -10px;
+  bottom: 2%;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: var(--marigold);
+  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.6);
+}
+
+.stamp svg {
+  width: 100%;
+  height: 100%;
+  animation: mandala-spin 24s linear infinite;
+}
+
+.stamp text {
+  font-family: "Mukta", sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  fill: var(--peacock-ink);
+}
+
+.stamp-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+}
+
+/* Large Devanagari word above the headline */
 .hero-hindi {
   font-family: var(--font-display);
-  font-size: clamp(5rem, 16vw, 11rem);
+  font-size: clamp(4rem, 10vw, 8rem);
   line-height: 1;
   color: var(--marigold);
   opacity: 0.85;
-  margin-bottom: -0.15em;
+  margin-bottom: 0.05em;
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 6.5vw, 5rem);
+  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
   max-width: 12ch;
   margin-bottom: 1.25rem;
 }
@@ -251,8 +344,34 @@ h2 {
   color: var(--peacock-ink);
 }
 
-/* Block-print border used between sections */
-.destinations::before,
+/* ===== Scrolling ribbon of destination names ===== */
+.ribbon {
+  overflow: hidden;
+  background: var(--marigold);
+  color: var(--peacock-ink);
+  border-block: 3px solid var(--rani);
+  padding: 0.7rem 0;
+}
+
+.ribbon-track {
+  display: flex;
+  width: max-content;
+  animation: ribbon-scroll 45s linear infinite;
+}
+
+.ribbon-track span {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+
+@keyframes ribbon-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Block-print border above the footer */
 footer::before {
   content: "";
   display: block;
@@ -262,12 +381,7 @@ footer::before {
 
 /* ===== Destinations ===== */
 .destinations {
-  padding: 0 2rem 5rem;
-}
-
-.destinations::before {
-  margin: 0 -2rem 4rem;
-  background-color: var(--peacock);
+  padding: 5rem 2rem;
 }
 
 .places {
@@ -563,47 +677,71 @@ details li {
   background: var(--white);
 }
 
-.table-wrap {
+.winter { --season: #3b5b92; }
+.summer { --season: #b36b00; } /* darker marigold so the labels stay readable */
+.monsoon { --season: var(--peacock); }
+.postmonsoon { --season: var(--rani); }
+
+.season-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   max-width: var(--max-width);
   margin: 0 auto;
-  overflow-x: auto; /* table scrolls sideways on small phones */
 }
 
-.season-table {
-  width: 100%;
-  min-width: 640px;
-  border-collapse: collapse;
-  text-align: left;
-}
-
-.season-table th,
-.season-table td {
-  padding: 1rem;
-  vertical-align: top;
-  border-bottom: 1px solid #dfe6e3;
-}
-
-.season-table thead th {
-  background: var(--peacock);
-  color: var(--white);
-  font-weight: 600;
-}
-
-.season-table tbody th {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 1.25rem;
-  color: var(--rani);
-  white-space: nowrap;
-}
-
-.season-table tbody td:nth-child(2) {
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.season-table tbody tr:nth-child(even) {
+.season-card {
+  display: flex;
+  flex-direction: column;
   background: var(--paper);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.season-head {
+  position: relative;
+  padding: 1.5rem 1.25rem 1.25rem;
+  background: var(--season);
+  color: var(--white);
+}
+
+.season-head::after {
+  /* scalloped bottom edge, like the coloured bands */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 12px;
+  background: radial-gradient(circle at 50% 0, var(--season) 11px, transparent 12px) 0 0 / 24px 12px repeat-x;
+}
+
+.season-icon {
+  font-size: 2rem;
+}
+
+.season-head h3 {
+  font-size: 1.7rem;
+  margin-top: 0.25rem;
+}
+
+.season-months {
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.season-body {
+  padding: 1.75rem 1.25rem 1.5rem;
+}
+
+.season-label {
+  font-weight: 700;
+  color: var(--season);
+  margin-top: 0.75rem;
+}
+
+.season-label:first-child {
+  margin-top: 0;
 }
 
 /* ===== Getting around + Packing ===== */
@@ -923,6 +1061,16 @@ footer::before {
   margin-bottom: 3rem;
 }
 
+.footer-big {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 7vw, 5.5rem);
+  line-height: 1.1;
+  text-align: center;
+  color: var(--marigold);
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -987,12 +1135,11 @@ footer a:hover {
 }
 
 .hero-mandala {
-  width: min(62vw, 760px);
-  right: -14%;
-  top: 50%;
-  translate: 0 -50%;
+  width: min(70vw, 820px);
+  left: -18%;
+  bottom: -35%;
   background: var(--marigold);
-  opacity: 0.22;
+  opacity: 0.08;
 }
 
 .about-mandala {
@@ -1037,6 +1184,26 @@ footer a:hover {
   background: radial-gradient(circle at 50% 0, var(--arch) 17px, transparent 18px) 0 0 / 36px 18px repeat-x;
 }
 
+/* ===== Scroll reveal ===== */
+@supports (animation-timeline: view()) {
+  .place,
+  .season-card,
+  .festival,
+  .short-story,
+  .connect-card {
+    animation: rise-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
 /* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -1044,7 +1211,14 @@ footer a:hover {
   }
 
   .toran,
-  .mandala {
+  .mandala,
+  .stamp svg,
+  .ribbon-track,
+  .place,
+  .season-card,
+  .festival,
+  .short-story,
+  .connect-card {
     animation: none;
   }
 
@@ -1082,11 +1256,26 @@ footer a:hover {
   }
 
   .hero {
-    min-height: 80vh;
-    padding: 6rem 1rem 3rem;
-    background:
-      linear-gradient(180deg, rgba(6, 54, 58, 0.5) 0%, rgba(6, 54, 58, 0.9) 70%),
-      url("assets/images/hero.jpg") no-repeat center 65%/cover;
+    padding: 6.5rem 1rem 3rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-collage {
+    height: 420px;
+  }
+
+  .stamp {
+    width: 104px;
+    height: 104px;
+    right: 0;
+  }
+
+  .season-cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
   .destinations,
@@ -1101,10 +1290,6 @@ footer a:hover {
   .contact {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-
-  .destinations::before {
-    margin: 0 -1rem 3rem;
   }
 
   .story {
@@ -1134,32 +1319,6 @@ footer a:hover {
 
   .packing {
     padding: 1.5rem;
-  }
-
-  /* Seasons table: stack each row as a block on phones */
-  .season-table {
-    min-width: 0;
-  }
-
-  .season-table thead {
-    display: none;
-  }
-
-  .season-table tr,
-  .season-table th,
-  .season-table td {
-    display: block;
-  }
-
-  .season-table tbody tr {
-    padding: 1rem 0;
-    border-bottom: 1px solid #dfe6e3;
-  }
-
-  .season-table th,
-  .season-table td {
-    padding: 0.2rem 1rem;
-    border: none;
   }
 
   .connect-card {

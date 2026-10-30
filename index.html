@@ -45,19 +45,50 @@
     <section id="home" class="hero">
       <div class="toran" aria-hidden="true"></div>
       <div class="mandala hero-mandala" aria-hidden="true"></div>
-      <div class="hero-content">
-        <p class="hero-hindi" lang="hi" aria-hidden="true">प्रकृति</p>
-        <h1>Travel India gently</h1>
-        <p class="hero-text">
-          Homestays in Spiti, root bridges in Meghalaya, nesting turtles on the Odisha coast.
-          Find places where your visit helps the land and the people who live on it.
-        </p>
-        <div class="hero-buttons">
-          <a href="#destinations" class="btn">Find a destination</a>
-          <a href="#seasons" class="btn btn-ghost">When to go</a>
+
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="hero-hindi" lang="hi" aria-hidden="true">प्रकृति</p>
+          <h1>Travel India gently</h1>
+          <p class="hero-text">
+            Homestays in Spiti, root bridges in Meghalaya, nesting turtles on the Odisha coast.
+            Find places where your visit helps the land and the people who live on it.
+          </p>
+          <div class="hero-buttons">
+            <a href="#destinations" class="btn">Find a destination</a>
+            <a href="#seasons" class="btn btn-ghost">When to go</a>
+          </div>
+        </div>
+
+        <!-- Photo collage in temple-arch frames -->
+        <div class="hero-collage">
+          <img class="collage-main" src="assets/images/hero.jpg" alt="Green glacial lake below cloud-covered Himalayan peaks">
+          <img class="collage-forest" src="assets/images/forest.jpg" alt="Pine forest below a misty Himalayan peak">
+          <img class="collage-sea" src="assets/images/beach.jpg" alt="Waves on an Indian beach at dusk">
+
+          <!-- Rotating round stamp -->
+          <div class="stamp" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <path id="stamp-circle" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/>
+              </defs>
+              <text>
+                <textPath href="#stamp-circle" textLength="272" lengthAdjust="spacing">Travel gently ✿ Leave no trace ✿ प्रकृति ✿</textPath>
+              </text>
+            </svg>
+            <span class="stamp-center">🌱</span>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ================= Scrolling ribbon ================= -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        <span>Sikkim ✿ Spiti ✿ Valley of Flowers ✿ Mawlynnong ✿ Kaziranga ✿ Khonoma ✿ Ziro ✿ Kumarakom ✿ Coorg ✿ Sundarbans ✿ Chilika ✿ Swaraj Dweep ✿&nbsp;</span>
+        <span>Sikkim ✿ Spiti ✿ Valley of Flowers ✿ Mawlynnong ✿ Kaziranga ✿ Khonoma ✿ Ziro ✿ Kumarakom ✿ Coorg ✿ Sundarbans ✿ Chilika ✿ Swaraj Dweep ✿&nbsp;</span>
+      </div>
+    </div>
 
     <!-- ================= Destinations Section ================= -->
     <section id="destinations" class="destinations">
@@ -240,43 +271,62 @@
         </p>
       </div>
 
-      <div class="table-wrap">
-        <table class="season-table">
-          <thead>
-            <tr>
-              <th scope="col">Season</th>
-              <th scope="col">Months</th>
-              <th scope="col">Good places to go</th>
-              <th scope="col">Keep in mind</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row"><span class="season-icon" aria-hidden="true">❄️</span> Winter</th>
-              <td>Dec–Feb</td>
-              <td>Kerala, Coorg, Andamans, Kaziranga, Sundarbans, Chilika Lake</td>
-              <td>High Himalayan passes are closed by snow. Winter fog can delay trains in North India.</td>
-            </tr>
-            <tr>
-              <th scope="row"><span class="season-icon" aria-hidden="true">☀️</span> Summer</th>
-              <td>Mar–May</td>
-              <td>Sikkim (rhododendrons in bloom), lower Himachal valleys, Meghalaya, Ziro Valley</td>
-              <td>The plains get very hot. Book hill stays early, as these are peak months.</td>
-            </tr>
-            <tr>
-              <th scope="row"><span class="season-icon" aria-hidden="true">🌧️</span> Monsoon</th>
-              <td>Jun–Sep</td>
-              <td>Spiti and Ladakh (rain-shadow areas), Valley of Flowers, Western Ghats</td>
-              <td>Landslides close hill roads. Many national parks and tiger reserves close.</td>
-            </tr>
-            <tr>
-              <th scope="row"><span class="season-icon" aria-hidden="true">🍂</span> Post-monsoon</th>
-              <td>Oct–Nov</td>
-              <td>Sikkim, Uttarakhand treks, Khonoma, Coorg, Meghalaya</td>
-              <td>Clear mountain views and green hills. Festival season, so trains fill up fast.</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="season-cards">
+        <article class="season-card winter">
+          <div class="season-head">
+            <span class="season-icon" aria-hidden="true">❄️</span>
+            <h3>Winter</h3>
+            <p class="season-months">Dec–Feb</p>
+          </div>
+          <div class="season-body">
+            <p class="season-label">Go to</p>
+            <p>Kerala, Coorg, Andamans, Kaziranga, Sundarbans, Chilika Lake</p>
+            <p class="season-label">Keep in mind</p>
+            <p>High Himalayan passes are closed by snow. Winter fog can delay trains in North India.</p>
+          </div>
+        </article>
+
+        <article class="season-card summer">
+          <div class="season-head">
+            <span class="season-icon" aria-hidden="true">☀️</span>
+            <h3>Summer</h3>
+            <p class="season-months">Mar–May</p>
+          </div>
+          <div class="season-body">
+            <p class="season-label">Go to</p>
+            <p>Sikkim (rhododendrons in bloom), lower Himachal valleys, Meghalaya, Ziro Valley</p>
+            <p class="season-label">Keep in mind</p>
+            <p>The plains get very hot. Book hill stays early, as these are peak months.</p>
+          </div>
+        </article>
+
+        <article class="season-card monsoon">
+          <div class="season-head">
+            <span class="season-icon" aria-hidden="true">🌧️</span>
+            <h3>Monsoon</h3>
+            <p class="season-months">Jun–Sep</p>
+          </div>
+          <div class="season-body">
+            <p class="season-label">Go to</p>
+            <p>Spiti and Ladakh (rain-shadow areas), Valley of Flowers, Western Ghats</p>
+            <p class="season-label">Keep in mind</p>
+            <p>Landslides close hill roads. Many national parks and tiger reserves close.</p>
+          </div>
+        </article>
+
+        <article class="season-card postmonsoon">
+          <div class="season-head">
+            <span class="season-icon" aria-hidden="true">🍂</span>
+            <h3>Post-monsoon</h3>
+            <p class="season-months">Oct–Nov</p>
+          </div>
+          <div class="season-body">
+            <p class="season-label">Go to</p>
+            <p>Sikkim, Uttarakhand treks, Khonoma, Coorg, Meghalaya</p>
+            <p class="season-label">Keep in mind</p>
+            <p>Clear mountain views and green hills. Festival season, so trains fill up fast.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -688,6 +738,7 @@
 
   <!-- ================= Footer ================= -->
   <footer>
+    <p class="footer-big">Travel India gently</p>
     <div class="footer-grid">
       <div>
         <p class="footer-logo">🌱 EcoVibes</p>

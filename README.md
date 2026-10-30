@@ -7,10 +7,11 @@ The website works on desktop, tablet, and mobile, and includes SEO meta tags.
 
 ## 🚀 Features
 - Responsive navbar with a CSS-only mobile menu
-- Hero section with a marigold toran (garland) and a slowly turning mandala
+- Hero with a marigold toran, photo collage in temple-arch frames, rotating stamp, and mandala
+- Scrolling ribbon of destination names
 - Indian design details: block-print borders, arched section edges, Devanagari headings
 - 12 eco-friendly destinations across India with a CSS-only region filter
-- "When to go" season table for India's climates
+- "When to go" season cards for India's climates
 - Eco travel tips, getting-around guide, and a tick-off packing list
 - Green festivals guide (Diwali, Holi, Ganesh Chaturthi, Hornbill)
 - Journal stories with expandable "Read the story" sections
