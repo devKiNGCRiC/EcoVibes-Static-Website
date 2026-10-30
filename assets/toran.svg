@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="84" viewBox="0 0 64 84">
+  <!-- string -->
+  <path d="M0 4 H64" stroke="#8a5a1f" stroke-width="2"/>
+  <!-- short mango leaves at tile edges (halves join when repeated) -->
+  <path d="M0 4 C9 12 7 24 0 30 C-7 24 -9 12 0 4 Z" fill="#3e7c3a"/>
+  <path d="M64 4 C73 12 71 24 64 30 C57 24 55 12 64 4 Z" fill="#3e7c3a"/>
+  <!-- marigold strand -->
+  <path d="M32 4 V58" stroke="#8a5a1f" stroke-width="1.5"/>
+  <g stroke="#ffc233" stroke-width="4" stroke-dasharray="2.2 1.6">
+    <circle cx="32" cy="15" r="7.5" fill="#f08a00"/>
+    <circle cx="32" cy="31" r="7.5" fill="#f4a300"/>
+    <circle cx="32" cy="47" r="7.5" fill="#f08a00"/>
+  </g>
+  <circle cx="32" cy="15" r="2.5" fill="#c25e00"/>
+  <circle cx="32" cy="31" r="2.5" fill="#c25e00"/>
+  <circle cx="32" cy="47" r="2.5" fill="#c25e00"/>
+  <!-- leaf at the end of the strand -->
+  <path d="M32 56 C41 64 39 76 32 82 C25 76 23 64 32 56 Z" fill="#2f6a2c"/>
+  <path d="M32 58 V80" stroke="#5aa152" stroke-width="1"/>
+</svg>

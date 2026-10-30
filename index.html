@@ -3,31 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EcoVibes - Discover Sustainable Travel and Eco-Tourism. Learn eco-friendly travel tips, destinations, and guides for a greener future.">
-  <meta name="keywords" content="eco tourism, sustainable travel, eco vibes, nature travel, green tourism">
+  <meta name="description" content="EcoVibes - Sustainable travel in India. Eco-friendly destinations, homestays, and green travel tips from the Himalaya to the coast.">
+  <meta name="keywords" content="eco tourism India, sustainable travel India, homestays, Sikkim, Meghalaya, Kerala, Spiti, responsible travel">
   <meta name="author" content="devKiNGCRiC">
-  <title>EcoVibes | Sustainable Travel</title>
-  
+  <title>EcoVibes | Sustainable Travel in India</title>
+
   <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Yatra One (display, Devanagari-inspired) + Mukta (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&family=Yatra+One&display=swap" rel="stylesheet">
 
   <!-- CSS File -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- ================= Navbar ================= -->
-  <header style="position: sticky; top: 0; z-index: 1000;">
+  <header class="site-header">
     <nav class="navbar">
-      <div class="logo">🌱 EcoVibes</div>
-       <!-- Hamburger Menu (Checkbox Hack) -->
+      <a href="#home" class="logo">🌱 EcoVibes</a>
+
+      <!-- Hamburger Menu (Checkbox Hack) -->
       <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="hamburger">&#9776;</label>
+      <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</label>
 
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#journal">Journal</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Plan a trip</a></li>
       </ul>
     </nav>
   </header>
@@ -35,52 +42,237 @@
   <main>
     <!-- ================= Hero Section ================= -->
     <section id="home" class="hero">
-      <h1>Travel Green, Travel Smart</h1>
-      <p>Discover eco-friendly destinations and sustainable travel tips for a better tomorrow.</p>
-      <a href="#blog" class="btn">Explore More</a>
-    </section>
-
-    <!-- ================= About Section ================= -->
-    <section id="about" class="about">
-      <h2>About EcoVibes</h2>
-      <p>
-        EcoVibes is a platform dedicated to eco-tourism. Our mission is to promote sustainable travel,
-        eco-friendly accommodations, and green lifestyle choices for travelers worldwide.
-      </p>
-    </section>
-
-    <!-- ================= Blog Section ================= -->
-    <section id="blog" class="blog">
-      <h2>Latest Blogs</h2>
-      <div class="blog-container">
-        <div class="blog-card">
-          <img src="assets/images/forest.jpg" alt="Forest Travel">
-          <h3>Top 5 Eco-Friendly Destinations in 2025</h3>
-          <p>Discover hidden gems that support sustainability and reduce carbon footprint.</p>
-        </div>
-        <div class="blog-card">
-          <img src="assets/images/beach.jpg" alt="Beach Travel">
-          <h3>How to Travel Plastic-Free</h3>
-          <p>Simple tips to reduce single-use plastic while traveling.</p>
+      <div class="toran" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-hindi" lang="hi" aria-hidden="true">प्रकृति</p>
+        <h1>Travel India gently</h1>
+        <p class="hero-text">
+          Homestays in Spiti, root bridges in Meghalaya, turtle walks on the Odisha coast.
+          Find places where your visit helps the land and the people who live on it.
+        </p>
+        <div class="hero-buttons">
+          <a href="#destinations" class="btn">Find a destination</a>
+          <a href="#contact" class="btn btn-ghost">Plan with us</a>
         </div>
       </div>
     </section>
 
+    <!-- ================= Destinations Section ================= -->
+    <section id="destinations" class="destinations">
+      <div class="section-head">
+        <h2>Where to go</h2>
+        <p class="hindi" lang="hi">कहाँ जाएँ</p>
+        <p class="section-intro">Six places in India that are getting green travel right.</p>
+      </div>
+
+      <div class="places">
+        <article class="place">
+          <p class="place-state">Sikkim</p>
+          <h3>Khangchendzonga</h3>
+          <p>India's first fully organic state. The national park around the world's third-highest peak is a UNESCO World Heritage Site.</p>
+          <p class="season">Best time: Mar–May, Oct–Dec</p>
+        </article>
+
+        <article class="place">
+          <p class="place-state">Meghalaya</p>
+          <h3>Mawlynnong</h3>
+          <p>A Khasi village often called the cleanest in Asia, close to living root bridges grown by hand over generations.</p>
+          <p class="season">Best time: Oct–Apr</p>
+        </article>
+
+        <article class="place">
+          <p class="place-state">Kerala</p>
+          <h3>Kumarakom backwaters</h3>
+          <p>Where Kerala's Responsible Tourism Mission began. Village tours and homestays are run by local families.</p>
+          <p class="season">Best time: Sep–Mar</p>
+        </article>
+
+        <article class="place">
+          <p class="place-state">Himachal Pradesh</p>
+          <h3>Spiti Valley</h3>
+          <p>A high cold desert of monasteries and mud-brick homes. Stay with families and travel with community-run groups.</p>
+          <p class="season">Best time: Jun–Sep</p>
+        </article>
+
+        <article class="place">
+          <p class="place-state">Karnataka</p>
+          <h3>Coorg</h3>
+          <p>Shade-grown coffee estates in the Western Ghats, where the forest canopy is kept over the coffee plants.</p>
+          <p class="season">Best time: Oct–Mar</p>
+        </article>
+
+        <article class="place">
+          <p class="place-state">Andaman &amp; Nicobar</p>
+          <h3>Swaraj Dweep</h3>
+          <p>Coral reefs and quiet beaches. Use reef-safe sunscreen and pick dive centres that never touch the coral.</p>
+          <p class="season">Best time: Nov–Apr</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= Tips Section ================= -->
+    <section id="tips" class="tips">
+      <div class="section-head">
+        <h2>Before you go</h2>
+        <p class="hindi" lang="hi">यात्रा से पहले</p>
+        <p class="section-intro">Small habits that make a trip around India lighter on the land.</p>
+      </div>
+
+      <ul class="tips-list">
+        <li>
+          <h3>Take the train</h3>
+          <p>Indian Railways reaches almost everywhere and emits far less per person than a flight. Book early on IRCTC.</p>
+        </li>
+        <li>
+          <h3>Carry a steel bottle</h3>
+          <p>Refill at water vending machines found at many big stations, or ask your homestay for filtered water.</p>
+        </li>
+        <li>
+          <h3>Say no to plastic bags</h3>
+          <p>Sikkim and Himachal have strict rules on single-use plastic. Keep a cloth jhola in your bag everywhere.</p>
+        </li>
+        <li>
+          <h3>Eat the local thali</h3>
+          <p>Seasonal food from the region travels fewer kilometres and keeps money with local cooks.</p>
+        </li>
+        <li>
+          <h3>Stay in homestays</h3>
+          <p>Your rupees go straight to the family hosting you, and you learn the place from people who live there.</p>
+        </li>
+        <li>
+          <h3>Respect sacred places</h3>
+          <p>Remove your shoes, dress modestly, and ask before you photograph people or rituals.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================= Journal Section ================= -->
+    <section id="journal" class="journal">
+      <div class="section-head">
+        <h2>From the journal</h2>
+        <p class="hindi" lang="hi">यात्रा कथाएँ</p>
+      </div>
+
+      <article class="story">
+        <img src="assets/images/forest.jpg" alt="Pine forest below a misty Himalayan peak" loading="lazy">
+        <div class="story-body">
+          <p class="place-state">Himachal Pradesh</p>
+          <h3>Walking the Himalayan forests without leaving a trace</h3>
+          <p>
+            The pine and deodar forests of Himachal are some of the most beautiful in India, and the
+            busiest trails now see a lot of litter. Here is how to trek them cleanly.
+          </p>
+          <details>
+            <summary>Read the story</summary>
+            <ul>
+              <li>Carry every wrapper back down. Pack snacks in a reusable box, not packets.</li>
+              <li>Pick valleys like Tirthan, next to the Great Himalayan National Park (UNESCO, 2014), where village homestays run small, guided treks.</li>
+              <li>Hire a local guide and porter. They know the trail and the weather, and the money stays in the village.</li>
+              <li>Use dry toilets where they exist, and camp at least 60 metres from streams.</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article class="story story-reverse">
+        <img src="assets/images/beach.jpg" alt="Waves on an Indian beach at dusk" loading="lazy">
+        <div class="story-body">
+          <p class="place-state">Odisha &amp; Tamil Nadu</p>
+          <h3>Turtle season on India's east coast</h3>
+          <p>
+            Every winter, Olive Ridley sea turtles come ashore on the Bay of Bengal to nest. You can
+            watch, if you know how to keep your distance.
+          </p>
+          <details>
+            <summary>Read the story</summary>
+            <p>
+              At Rushikulya and Gahirmatha in Odisha, thousands of turtles nest together between February
+              and March. In Chennai, volunteer groups run night turtle walks along the beach from January
+              to March to move eggs to safe hatcheries. Go with these groups, use no torches or flash
+              near the turtles, and never touch the hatchlings as they head to the sea.
+            </p>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <!-- ================= About Section ================= -->
+    <section id="about" class="about">
+      <p class="about-hindi" lang="hi">अतिथि देवो भव</p>
+      <p class="about-translation">“The guest is god.” We think a good guest gives something back.</p>
+      <p class="about-text">
+        EcoVibes is a small team of Indian travellers. We share places, stays, and habits that protect
+        India's forests, rivers, and coasts, and support the communities who look after them.
+      </p>
+    </section>
+
     <!-- ================= Contact Section ================= -->
     <section id="contact" class="contact">
-      <h2>Contact Us</h2>
-      <p>Have questions? Reach out via social links below.</p>
+      <div class="contact-info">
+        <h2>Plan a trip with us</h2>
+        <p class="hindi" lang="hi">संपर्क करें</p>
+        <p>
+          Tell us where you'd like to go and when. We'll reply with homestays, trains, and local guides
+          that fit your trip.
+        </p>
+        <p class="contact-detail">Based in Dehradun, Uttarakhand</p>
+        <p class="contact-detail"><a href="mailto:hello@ecovibes.in">hello@ecovibes.in</a></p>
+      </div>
+
+      <form class="contact-form" action="mailto:hello@ecovibes.in" method="post" enctype="text/plain">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="region">Where in India?</label>
+          <select id="region" name="region">
+            <option>The Himalaya</option>
+            <option>North-East India</option>
+            <option>Kerala &amp; the Western Ghats</option>
+            <option>The coast &amp; islands</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Your trip</label>
+          <textarea id="message" name="message" rows="4" placeholder="Dates, number of travellers, what you'd like to see..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Send message</button>
+      </form>
     </section>
   </main>
 
   <!-- ================= Footer ================= -->
   <footer>
-    <p>© 2025 EcoVibes | Made with ❤️ by <a href="https://github.com/devKiNGCRiC" target="_blank">devKiNGCRiC</a></p>
-    <div class="social-links">
-      <a href="https://github.com/devKiNGCRiC" target="_blank">GitHub</a> |
-      <a href="https://twitter.com/KiNGCRiC28" target="_blank">Twitter</a> |
-      <a href="https://instagram.com/kingcric_28" target="_blank">Instagram</a>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo">🌱 EcoVibes</p>
+        <p>Green travel across India, from the Himalaya to the Andamans.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#tips">Tips</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#contact">Plan a trip</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow us</h3>
+        <ul>
+          <li><a href="https://github.com/devKiNGCRiC" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://twitter.com/KiNGCRiC28" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="https://instagram.com/kingcric_28" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
     </div>
+    <p class="copyright">© 2026 EcoVibes. Made with ❤️ in India by <a href="https://github.com/devKiNGCRiC" target="_blank" rel="noopener">devKiNGCRiC</a></p>
   </footer>
 </body>
 </html>
