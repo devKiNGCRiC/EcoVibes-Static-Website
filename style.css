@@ -767,67 +767,64 @@ details li {
   margin: 0 auto;
 }
 
-/* ===== Contact ===== */
+/* ===== Contact (Connect) ===== */
 .contact {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  max-width: calc(var(--max-width) + 4rem); /* padding sits inside, so add it back */
-  margin: 0 auto;
   padding: 5rem 2rem;
 }
 
-.contact-info > p {
-  max-width: 45ch;
-  margin-bottom: 1rem;
+.connect-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
-.contact-detail {
-  font-weight: 600;
-  color: var(--peacock);
-}
-
-.contact-form {
+.connect-card {
+  display: flex;
+  flex-direction: column;
   background: var(--white);
   padding: 2rem;
   border-radius: 12px;
   border-top: 6px solid var(--rani);
-  box-shadow: 0 10px 30px rgba(6, 54, 58, 0.12);
 }
 
-.form-row {
-  margin-bottom: 1.1rem;
+.connect-icon {
+  font-size: 2rem;
 }
 
-.form-row label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+.connect-card h3 {
+  font-size: 1.5rem;
+  color: var(--peacock);
+  margin: 0.5rem 0;
 }
 
-.form-row input,
-.form-row select,
-.form-row textarea {
-  width: 100%;
-  padding: 0.65rem 0.8rem;
-  font: inherit;
-  font-size: 1rem;
-  color: var(--text);
-  background: var(--paper);
-  border: 1px solid #c9d3cf;
-  border-radius: 8px;
+.connect-email {
+  margin-top: 0.75rem;
+  font-weight: 700;
+  color: var(--peacock);
+  user-select: all; /* one click selects the whole address for copying */
 }
 
-.form-row input:focus,
-.form-row select:focus,
-.form-row textarea:focus {
-  outline: none;
+.connect-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+/* Outline button for light backgrounds */
+.btn-outline {
+  background: transparent;
   border-color: var(--peacock);
-  box-shadow: 0 0 0 3px rgba(11, 79, 85, 0.2);
+  color: var(--peacock);
 }
 
-.contact-form .btn {
-  width: 100%;
+.btn-outline:hover {
+  background: var(--peacock);
+  border-color: var(--peacock);
+  color: var(--white);
 }
 
 /* ===== Footer ===== */
@@ -967,7 +964,6 @@ footer a:hover {
     order: 0;
   }
 
-  .contact,
   .travel-grid,
   .words-grid {
     grid-template-columns: 1fr;
@@ -1004,7 +1000,7 @@ footer a:hover {
     border: none;
   }
 
-  .contact-form {
+  .connect-card {
     padding: 1.5rem;
   }
 

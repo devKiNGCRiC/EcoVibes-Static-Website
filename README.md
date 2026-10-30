@@ -15,7 +15,7 @@ The website works on desktop, tablet, and mobile, and includes SEO meta tags.
 - Journal stories with expandable "Read the story" sections
 - Useful Hindi and regional words for travellers
 - FAQ on permits, water, national parks, and the monsoon
-- About section and contact form (opens your email app)
+- About section and "Get in touch" links (email, Gmail, GitHub issues, social media)
 - SEO-friendly meta tags and an SVG favicon
 
 ---

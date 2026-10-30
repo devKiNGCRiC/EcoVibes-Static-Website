@@ -568,41 +568,46 @@
 
     <!-- ================= Contact Section ================= -->
     <section id="contact" class="contact">
-      <div class="contact-info">
+      <div class="section-head">
         <h2>Get in touch</h2>
         <p class="hindi" lang="hi">संपर्क करें</p>
-        <p>
-          Have a question, a correction, or a green travel story from India? Send a message and it will
-          open in your email app.
+        <p class="section-intro">
+          Have a question, a correction, or a green travel story from India? Pick whichever way suits you.
         </p>
-        <p class="contact-detail"><a href="mailto:devkingcric@gmail.com">devkingcric@gmail.com</a></p>
       </div>
 
-      <form class="contact-form" action="mailto:devkingcric@gmail.com" method="post" enctype="text/plain">
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
-        </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required>
-        </div>
-        <div class="form-row">
-          <label for="region">Region you are asking about</label>
-          <select id="region" name="region">
-            <option>The Himalaya</option>
-            <option>North-East India</option>
-            <option>Kerala &amp; the Western Ghats</option>
-            <option>The coast &amp; islands</option>
-            <option>General question</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
-        </div>
-        <button type="submit" class="btn">Send message</button>
-      </form>
+      <div class="connect-grid">
+        <article class="connect-card">
+          <span class="connect-icon" aria-hidden="true">✉️</span>
+          <h3>Email me</h3>
+          <p>For questions, travel stories, or anything else.</p>
+          <p class="connect-email">devkingcric@gmail.com</p>
+          <div class="connect-actions">
+            <a href="mailto:devkingcric@gmail.com?subject=EcoVibes" class="btn">Open email app</a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=devkingcric@gmail.com&amp;su=EcoVibes" class="btn btn-outline" target="_blank" rel="noopener">Write in Gmail</a>
+          </div>
+        </article>
+
+        <article class="connect-card">
+          <span class="connect-icon" aria-hidden="true">🗺️</span>
+          <h3>Suggest a place or fix a mistake</h3>
+          <p>Know a great eco-friendly spot, or found something out of date? Open an issue on GitHub. You'll need a free GitHub account.</p>
+          <div class="connect-actions">
+            <a href="https://github.com/devKiNGCRiC/EcoVibes-Static-Website/issues/new?title=Suggestion%3A%20" class="btn" target="_blank" rel="noopener">Open a GitHub issue</a>
+          </div>
+        </article>
+
+        <article class="connect-card">
+          <span class="connect-icon" aria-hidden="true">📸</span>
+          <h3>Follow along</h3>
+          <p>Say hello or send a message on social media.</p>
+          <div class="connect-actions">
+            <a href="https://instagram.com/kingcric_28" class="btn" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://x.com/KiNGCRiC28" class="btn btn-outline" target="_blank" rel="noopener">X (Twitter)</a>
+            <a href="https://github.com/devKiNGCRiC" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 
